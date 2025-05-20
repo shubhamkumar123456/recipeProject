@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            padding: 20px;
+            margin: 100px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="input" onkeyup="handleChanger(event)">
+
+
+    <script>
+        let val = ''
+        let inputTag = document.querySelector('#input');
+        console.log(inputTag)
+        inputTag.focus()
+        inputTag.value = '8'
+
+
+        const handleChanger = (e)=>{
+            let value = e.target.value;
+            console.log(value)
+        }
+
+
+        
+    </script>
+</body>
+</html>

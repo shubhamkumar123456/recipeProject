@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+
+        body{
+background-color: #353935;
+        }
+        option{
+            color: black;
+        }
+
+        select{
+            outline: none;
+            border: 1px solid;
+            padding: 6px 12px;
+            border-radius: 5px 0 0 5px;
+            border-right: none;
+
+        }
+      
+        nav {
+            /* width: 100%;
+            height: 65px;
+            background-color: aqua; */
+            /* display: flex;
+            justify-content: space-between;
+            align-items: center; */
+        }
+
+        ul {
+            /* display: flex;
+            gap: 40px;
+            justify-content: space-between;
+            background-color: green;
+            /* width: 700px; */
+            /* color: white; */
+
+        }
+
+        /* h1{
+            text-transform: capitalize;
+        }
+        */
+
+        .mobileUl {
+            display: none;
+        }
+
+        .mobileUl.active {
+            display: flex;
+        }
+        #inputSearch{
+            border-left: none ;
+            padding: 5.5px 0;
+            padding-left: 15px;
+             border-radius: 0 5px 5px 0px;
+             /* padding-bottom: 1px; */
+        }
+    </style>
+</head>
+</head>
+
+<body>
+    <!-- <h1 class="bg-green-800">hello this is heading</h1> -->
+
+    <nav class="w-full px-12 flex justify-between items-center relative text-white  h-[65px] bg-[black]">
+        <h1 class="font-semibold text-xl w-[200px] flex items-center capitalize ">
+             <img class="w-10 h-10 rounded-full" src="https://png.pngtree.com/png-vector/20220705/ourmid/pngtree-food-logo-png-image_5687686.png" alt="">
+             
+             Foodie Baba</h1>
+
+             <div class="flex items-center w-full justify-center">
+                <div class="categoriesBox ">
+                 
+            </div>
+            <div class="sm:flex hidden  items-center">
+                <input type="text" id="inputSearch" class="outline-none border px-4 py-1 " placeholder="search a dish..">
+                <button onclick="handleSearch()" class="bg-blue-700 text-white px-4 py-1  rounded-md hover:bg-blue-950">search</button>
+            </div>
+             </div>
+        <!-- <ul class="  lg:flex  hidden  gap-10">
+            <li onclick="getNews('sports')" class="cursor-pointer font-semibold">Sports</li>
+            <li onclick="getNews('entertainment')" class="cursor-pointer font-semibold">Entertainment</li>
+            <li onclick="getNews('international')" class="cursor-pointer font-semibold">International</li>
+            <li onclick="getNews('india')" class="cursor-pointer font-semibold">India</li>
+            <li onclick="getNews('dance')" class="cursor-pointer font-semibold">Dance</li>
+        </ul> -->
+
+        <!-- <ul class=" mobileUl bg-blue-500  text-center flex-col absolute top-full left-0 w-full ">
+            <li class="font-semibold py-3 border-b border-[#c4c3c3]">Sports</li>
+            <li class="font-semibold py-3 border-b border-[#c4c3c3]">Entertainment</li>
+            <li class="font-semibold py-3 border-b border-[#c4c3c3]">International</li>
+            <li class="font-semibold py-3 border-b border-[#c4c3c3]">India</li>
+            <li class="font-semibold py-3 border-b border-[#c4c3c3]">Dance</li>
+        </ul> -->
+
+        <ul class=" mobileUl bg-[rgb(0,0,0,0.5)] h-screen  flex-col absolute top-0 left-0 w-[240px] ">
+            <h1 class="font-semibold text-xl capitalize  px-12 mb-5 mt-5">Foodie Baba</h1>
+            <div class="flex-col gap-2 mt-2 flex sm:hidden">
+                <input type="text" class="outline-none border px-4 py-1 rounded-md" placeholder="seach a news">
+                <button class="bg-blue-700 text-white px-4 py-1  rounded-md hover:bg-blue-950">search</button>
+            </div>
+            <li class="cursor-pointer font-semibold py-3 border-b ps-8 border-[#c4c3c3]">Sports</li>
+            <li class="cursor-pointer font-semibold py-3 border-b ps-8 border-[#c4c3c3]">Entertainment</li>
+            <li class="cursor-pointer font-semibold py-3 border-b ps-8 border-[#c4c3c3]">International</li>
+            <li class="cursor-pointer font-semibold py-3 border-b ps-8 border-[#c4c3c3]">India</li>
+            <li class="cursor-pointer font-semibold py-3 border-b ps-8 border-[#c4c3c3]">Dance</li>
+        </ul>
+
+
+        <button onclick="handleMenuClicked(event)" class="lg:hidden  block">
+            <i class="fa-solid fa-bars text-xl "></i>
+        </button>
+
+    </nav>
+
+    <!-- <i class="fa-solid fa-plane"></i> -->
+
+
+    <!-- <span class="bg-blue-500 ps-[100px]">hello i am span</span> -->
+
+
+
+    <!-- <div class="bg-[crimson] h-[100px] xl:bg-black 2xl:bg-[yellow] w-[100px]"></div> -->
+
+
+    <div class="container w-[90%] mx-auto mt-4 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 m-auto">
+          
+    </div>
+
+
+    <script>
+
+        let container = document.querySelector('.container')
+        let categoriesBox = document.querySelector('.categoriesBox')
+        let inputSearchTag = document.querySelector('#inputSearch')
+
+        let loggedInUser = localStorage.getItem('newsLogin');
+        // if (!loggedInUser) {
+        //     window.location.href = 'login.html'
+        // }
+
+        let mobileUlTag = document.querySelector('.mobileUl')
+        const handleMenuClicked = () => {
+            mobileUlTag.classList.toggle('active')
+        }
+
+
+        async function getNews(search) {
+            let res = await fetch(`https://dummyjson.com/recipes/search?q=${search}&limit=0`)
+            // let res = await fetch(`https://newsdata.io/api/1/latest?apikey=pub_86928c1e2528038ce89d935ff6691819ca067&q=${search}`)
+            let data = await res.json()
+            console.log(data) //{}
+            console.log(data.recipes)  //[{},{},{}...50]
+    
+
+            container.innerHTML = ''
+
+            data.recipes.forEach((val, i) => {
+
+                container.innerHTML = container.innerHTML + `
+            <div class="box  bg-black text-white p-3 flex flex-col gap-4 justify-between">
+                <img class="w-full " src=${val.image} alt="">
+                <p class="font-semibold">${val.name}</p>
+                <a onclick='handleMove(${val.id})' class="bg-[#0f0f26] hover:bg-[#323268] text-center text-white px-3 py-2 rounded"> View full recipe </a>
+            </div>`
+
+        })
+        
+    }
+    
+    function handleMove(id){
+        // console.log("all ok")
+        console.log(id)
+        // window.location.href = `ViewRecipe.html?q=${id}`
+        localStorage.setItem('recipeId',id)
+        window.location.href = `ViewRecipe.html`
+    }
+        getNews('')
+
+
+        async function getCategories(){
+           let res = await fetch('https://dummyjson.com/recipes/tags')
+            let data = await res.json()
+            data.length = 10
+            console.log(data)
+            
+            let selectTag = document.createElement('select');
+
+            selectTag.onchange=(e)=>{
+                console.log(e.target.value);
+                   getNews(e.target.value)
+                
+            }
+            selectTag.innerHTML = ' <option value="">Menu</option>'
+            data.forEach((val,i)=>{
+                let optionTag =  document.createElement('option');
+                optionTag.value=val
+                optionTag.innerHTML=val;
+                selectTag.append(optionTag) 
+            })
+
+            console.log(selectTag)
+            categoriesBox.append(selectTag)
+            
+        }
+
+        getCategories()
+
+
+
+        const handleSearch = ()=>{
+           getNews(inputSearchTag.value)
+        }
+
+    </script>
+</body>
+
+</html>

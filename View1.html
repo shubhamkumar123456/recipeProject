@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> I am view 1 page</h1>
+
+
+    <script>
+
+        let body = document.querySelector('body');
+        let ans = JSON.parse(localStorage.getItem('x'));
+        console.log(ans)
+
+        let div = document.createElement('div')
+        let pricetag = document.createElement('p')
+        let idtag = document.createElement('p')
+        let nametag = document.createElement('p')
+
+
+        idtag.innerHTML = ans.id
+        nametag.innerHTML = ans.name
+        pricetag.innerHTML = ans.price
+
+
+        div.append(idtag, nametag , pricetag)
+
+        body.append(div)
+
+
+    </script>
+</body>
+</html>
